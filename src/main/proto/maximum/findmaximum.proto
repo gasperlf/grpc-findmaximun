@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package  net.ontopsolutions.maximum;
+
+option java_package = "net.ontopsolutions.computeraverage";
+option java_multiple_files = true;
+
+message FindMaximumRequest {
+  int32 number=1;
+}
+
+message FindMaximumResponse {
+  double maximum=1;
+}
+
+service OperationService {
+  rpc findMaximum(stream FindMaximumRequest) returns (stream FindMaximumResponse){};
+}
